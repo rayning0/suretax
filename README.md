@@ -1,4 +1,4 @@
-#Get tax info from SureTax API
+# Get tax info from SureTax API
 
 In your directory, you must have secret `.env` file like this:
 ```
@@ -8,7 +8,7 @@ SURETAX_BASE_URL=https://testapi.taxrating.net
 SURETAX_REQUEST_VERSION=04
 SURETAX_CANCEL_VERSION=01
 ```
-##To Use:
+## To Use:
 ```ruby
 Tax.new(trans_type_code: 'FIXEDVOIP').get_taxes
 ```
@@ -37,7 +37,7 @@ For parameters you don't input, we use these defaults:
  zipcode = "91324"
 ```
 
-See [software tests](https://github.com/xbpio/get_tax/spec/get_tax_spec.rb). See [sample API call results](https://github.com/xbpio/get_tax/sample_results.rb).
+See [software tests](https://github.com/xbpio/get_tax/blob/master/spec/get_tax_spec.rb). See [sample API call results](https://github.com/xbpio/get_tax/sample_results.rb).
 
 See [SureTax API call document](https://confluence.qualityspeaks.com/display/DEVPROCEDURES/SureTax+API+Call), plus
 
