@@ -1,0 +1,7 @@
+machine:
+  environment:
+    SURETAX_BASE_URL: "https://testapi.taxrating.net"
+    SURETAX_VALIDATION_KEY: "xxxxxxxxxx"
+    SURETAX_CLIENT_NUMBER: "000000000"
+    SURETAX_POST_PATH: "/Services/V01/SureTax.asmx/PostRequest"
+    SURETAX_CANCEL_PATH: "/Services/V01/SureTax.asmx/CancelPostRequest"

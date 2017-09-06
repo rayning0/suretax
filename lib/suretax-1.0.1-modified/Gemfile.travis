@@ -1,0 +1,12 @@
+# Special Travis Gemfile for Rubinius
+source 'https://rubygems.org'
+
+platforms :rbx do
+  gem 'rubysl', '~> 2.0'
+  gem 'rubysl-openssl', '~> 2.1.0'
+  gem 'psych'
+  gem 'rubinius-coverage'
+  gem 'json', '~> 1.8'
+end
+
+eval_gemfile File.expand_path('../Gemfile', __FILE__)
