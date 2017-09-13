@@ -7,6 +7,7 @@ require "suretax/connection"
 require "suretax/response"
 require "suretax/constants"
 require "suretax/api"
+require "suretax/get_tax"
 
 require "money"
 

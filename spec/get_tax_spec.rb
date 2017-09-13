@@ -1,6 +1,6 @@
 require 'i18n'
 require 'spec_helper'
-require_relative '../lib/get_tax'
+require 'suretax'
 
 describe Tax do
   context '#get_taxes' do

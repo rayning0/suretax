@@ -1,6 +1,8 @@
 # Get tax info from SureTax API
 
-In your directory, you must have secret `.env` file like this:
+This gem is for XBP only. It's NOT the public "[suretax](https://github.com/Hello-Labs/suretax)" gem!
+
+In your directory, have secret `.env` file like:
 ```
 SURETAX_VALIDATION_KEY=____
 SURETAX_CLIENT_NUMBER=000000866
@@ -9,8 +11,14 @@ SURETAX_REQUEST_VERSION=04
 SURETAX_CANCEL_VERSION=01
 ```
 ## To Use:
+
+In Gemfile, put
 ```ruby
-require_relative './lib/get_tax'
+gem 'suretax', github: 'xbpio/suretax'
+```
+In your code, put
+```ruby
+require 'suretax'
 
 Tax.new(zipcode: '94088').get_tax
 Tax.new(zipcode: '94088', revenue: '15.15').get_tax
@@ -18,12 +26,12 @@ Tax.new(zipcode: '94088', revenue: '15.15',
         trans_date: '09/12/2017', trans_type_code: 'FIXEDVOIP').get_tax
 ```
 
-Must have at least 1 parameter. Must have 1-13 parameters, like:
+Must have at least 1 parameter. May have 1-13 parameters, like:
 
 ```ruby
 Tax.new(trans_type_code: 'HWCREDIT', tax_situs_rule: '03', sales_type_code: 'B',...).get_tax
 ```
-For parameters you don't input, we use these defaults:
+For parameters you leave out, we use these defaults from [default_args](https://github.com/xbpio/suretax/blob/master/lib/suretax/get_tax.rb):
 
 ```ruby
   zipcode: '91324',
@@ -48,7 +56,7 @@ For parameters you don't input, we use these defaults:
   return_file_code: '0'
 ```
 
-See [software tests](https://github.com/xbpio/suretax-xbp/blob/master/spec/get_tax_spec.rb). See [sample API requests/responses](https://github.com/xbpio/suretax-xbp/blob/master/spec/support/request_helper.rb).
+See [software tests](https://github.com/xbpio/suretax/blob/master/spec/get_tax_spec.rb). See [sample API requests/responses](https://github.com/xbpio/suretax/blob/master/spec/support/request_helper.rb).
 
 See [SureTax API call document](https://confluence.qualityspeaks.com/display/DEVPROCEDURES/SureTax+API+Call), plus
 

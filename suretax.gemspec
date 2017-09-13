@@ -5,7 +5,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require "suretax/version"
 
 Gem::Specification.new do |spec|
-  spec.name          = "suretax-xbp"
+  spec.name          = "suretax"
   spec.version       = Suretax::VERSION
   spec.authors       = ["Damon Davison", "Raymond Gan"]
   spec.email         = ["damon@allolex.net", "rayning@yahoo.com"]
