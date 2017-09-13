@@ -14,7 +14,7 @@ SURETAX_CANCEL_VERSION=01
 
 In Gemfile, put
 ```ruby
-gem 'suretax', github: 'xbpio/suretax'
+gem 'suretax', git: 'https://github.com/xbpio/suretax.git'
 ```
 In your code, put
 ```ruby
