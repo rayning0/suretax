@@ -4,7 +4,6 @@ require 'suretax'
 require "excon"
 require "money"
 require "monetize"
-require 'dotenv/load'
 require "awesome_print"
 
 class Tax
@@ -12,15 +11,7 @@ class Tax
 
   def initialize(args)
     puts "\n\nSureTax input: #{args}"
-
-    # Delete this later. We put this in ap/config/initializers/suretax.rb
-    Suretax.configure do |c|
-      c.validation_key  = ENV['SURETAX_VALIDATION_KEY']
-      c.base_url        = ENV['SURETAX_BASE_URL']
-      c.client_number   = ENV['SURETAX_CLIENT_NUMBER']
-      c.request_version = ENV['SURETAX_REQUEST_VERSION']
-      c.cancel_version  = ENV['SURETAX_CANCEL_VERSION']
-    end
+    # In Docker, Suretax.configure is set in ap/config/initializers/suretax.rb
 
     @args = default_args.merge(args)
   end
