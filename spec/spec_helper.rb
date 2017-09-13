@@ -1,12 +1,9 @@
-require "dotenv"  # First line of spec_helper
-Dotenv.load       # Second line of spec_helper
-
-require "pry"
+require "dotenv/load"
 require "rspec"
 require "rspec/its"
-require "suretax"
 require "awesome_print"
 require "webmock/rspec"
+require 'logger'
 
 # Load support files
 Dir[File.expand_path(File.dirname(__FILE__) + "/support/**/*.rb")].each do |support_file|
@@ -14,10 +11,12 @@ Dir[File.expand_path(File.dirname(__FILE__) + "/support/**/*.rb")].each do |supp
 end
 
 RSpec.configure do |config|
+  config.color = true
   config.before(:each) do
     Suretax.configure do |c|
       c.validation_key  = ENV["SURETAX_VALIDATION_KEY"]
       c.client_number   = ENV["SURETAX_CLIENT_NUMBER"]
+      c.logger = Logger.new(STDOUT)
     end
   end
 

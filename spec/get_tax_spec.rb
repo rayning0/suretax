@@ -1,26 +1,38 @@
-require 'rspec'
+require 'i18n'
+require 'spec_helper'
 require_relative '../lib/get_tax'
 
 describe Tax do
   context '#get_taxes' do
-    it 'initializes object with right defaults' do
-      input = Tax.new(zipcode: '91311', trans_date: '08/30/2017')
-
-      expect(input.inspect.split.drop(1).join).to eq("@zipcode=\"91311\",@trans_date=\"08/30/2017\",@trans_type_code=\"HWCREDIT\",@tax_situs_rule=\"04\",@seconds=\"0\",@regulatory_code=\"03\",@sales_type_code=\"R\",@revenue=\"40.00\",@total_revenue=\"40.00\",@bill_to_number=\"8585260000\",@orig_number=\"8585260000\",@term_number=\"8585260000\",@units=\"1\">")
+    it 'changes default request arguments' do
+      tax = Tax.new(zipcode: '91311', trans_date: '08/30/2017')
+      expect(tax.args[:zipcode]).to eq '91311'
+      expect(tax.args[:trans_date]).to eq '08/30/2017'
     end
 
     it 'finds sales taxes' do
-      res = Tax.new(zipcode: '91311').get_taxes
-
+      stub_request(:post, "#{suretax_url}#{suretax_post_path}").
+        with(body: /91324/).to_return(
+        status: 200,
+        body: suretax_wrap_response(valid_v04_hwcredit_response_body.to_json)
+      )
+      res = Tax.new(zipcode: '91324').get_tax
       expect(res['Successful']).to eq 'Y'
       expect(res['GroupList'][0]['TaxList'].map{ |tax| tax['TaxTypeDesc'] }).to eq([
-        'STATE SALES TAX', 'COUNTY SALES TAX', 'DISTRICT TAX (LACT) (LATC ) (LAMT) (LAMA)'
+        'STATE SALES TAX',
+        'COUNTY SALES TAX',
+        'DISTRICT TAX (LACT) (LATC ) (LAMT) (LAMA)'
       ])
+      expect(res).to eq valid_v04_hwcredit_response_body
     end
 
     it 'finds utility taxes' do
-      res = Tax.new(trans_type_code: 'FIXEDVOIP').get_taxes
-
+      stub_request(:post, "#{suretax_url}#{suretax_post_path}").
+        with(body: /FIXEDVOIP/).to_return(
+        status: 200,
+        body: suretax_wrap_response(valid_v04_fixedvoip_response_body.to_json)
+      )
+      res = Tax.new(trans_type_code: 'FIXEDVOIP').get_tax
       expect(res['GroupList'][0]['TaxList'].map{ |tax| tax['TaxTypeDesc'] }).to eq([
         "CA EMERG TEL. USERS SURCHARGE",
         "CA TELECOM RELAY SYSTEMS SURCHARGE",
@@ -31,6 +43,7 @@ describe Tax do
         "FEDERAL UNIVERSAL SERVICE FUND",
         "FEDERAL COST RECOVERY CHARGE"
       ])
+      expect(res).to eq valid_v04_fixedvoip_response_body
     end
   end
 end

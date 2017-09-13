@@ -5,11 +5,11 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require "suretax/version"
 
 Gem::Specification.new do |spec|
-  spec.name          = "suretax"
+  spec.name          = "suretax-xbp"
   spec.version       = Suretax::VERSION
-  spec.authors       = ["Damon Davison"]
-  spec.email         = ["damon@allolex.net"]
-  spec.description   = "A wrapper library for the SureTax communications tax API"
+  spec.authors       = ["Damon Davison", "Raymond Gan"]
+  spec.email         = ["damon@allolex.net", "rayning@yahoo.com"]
+  spec.description   = "A wrapper library for the SureTax communications tax API, customized for XBP."
   spec.summary       = "This gem will allow Ruby developers to easily integrate SureTax into their apps."
   spec.homepage      = ""
   spec.license       = "MIT"
@@ -30,5 +30,4 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "dotenv"
   spec.add_development_dependency "awesome_print"
   spec.add_development_dependency "webmock"
-  spec.add_development_dependency "pry"
 end

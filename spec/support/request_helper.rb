@@ -249,6 +249,193 @@ module RequestSpecHelper
     }
   end
 
+  def valid_v04_hwcredit_response_body
+    {
+          "Successful" => "Y",
+        "ResponseCode" => "9999",
+       "HeaderMessage" => "Success",
+        "ItemMessages" => [],
+      "ClientTracking" => "track",
+            "TotalTax" => "3.700000",
+             "TransId" => 546066513,
+                "STAN" => "",
+            "GroupList" => [
+              {
+                    "LineNumber" => "1",
+                     "StateCode" => "CA",
+                 "InvoiceNumber" => "1",
+                "CustomerNumber" => "000000001",
+                       "TaxList" => [
+                        {
+                           "TaxTypeCode" => "101",
+                           "TaxTypeDesc" => "STATE SALES TAX",
+                             "TaxAmount" => "2.400000",
+                               "Revenue" => "40.0",
+                            "CountyName" => "LOS ANGELES",
+                              "CityName" => "LOS ANGELES",
+                               "TaxRate" => 0.06,
+                        "PercentTaxable" => 1.0,
+                               "FeeRate" => 0,
+                           "RevenueBase" => "40.000000",
+                              "TaxOnTax" => "0"
+                        },
+                        {
+                           "TaxTypeCode" => "202",
+                           "TaxTypeDesc" => "COUNTY SALES TAX",
+                             "TaxAmount" => "0.500000",
+                               "Revenue" => "40.0",
+                            "CountyName" => "LOS ANGELES",
+                              "CityName" => "LOS ANGELES",
+                               "TaxRate" => 0.0125,
+                        "PercentTaxable" => 1.0,
+                               "FeeRate" => 0,
+                           "RevenueBase" => "40.000000",
+                              "TaxOnTax" => "0"
+                        },
+                        {
+                           "TaxTypeCode" => "203",
+                           "TaxTypeDesc" => "DISTRICT TAX (LACT) (LATC ) (LAMT) (LAMA)",
+                             "TaxAmount" => "0.800000",
+                               "Revenue" => "40.0",
+                            "CountyName" => "LOS ANGELES",
+                              "CityName" => "LOS ANGELES",
+                               "TaxRate" => 0.02,
+                        "PercentTaxable" => 1.0,
+                               "FeeRate" => 0,
+                           "RevenueBase" => "40.000000",
+                              "TaxOnTax" => "0"
+                        }
+                      ]
+                }
+              ]
+    }
+  end
+
+  def valid_v04_fixedvoip_response_body
+    {
+            "Successful" => "Y",
+          "ResponseCode" => "9999",
+         "HeaderMessage" => "Success",
+          "ItemMessages" => [],
+        "ClientTracking" => "track",
+              "TotalTax" => "8.882172",
+               "TransId" => 547011514,
+                  "STAN" => "",
+             "GroupList" => [
+            {
+                    "LineNumber" => "1",
+                     "StateCode" => "CA",
+                 "InvoiceNumber" => "1",
+                "CustomerNumber" => "000000001",
+                       "TaxList" => [
+                    {
+                           "TaxTypeCode" => "106",
+                           "TaxTypeDesc" => "CA EMERG TEL. USERS SURCHARGE",
+                             "TaxAmount" => "0.300000",
+                               "Revenue" => "40.0",
+                            "CountyName" => "LOS ANGELES",
+                              "CityName" => "LOS ANGELES",
+                               "TaxRate" => 0.0075,
+                        "PercentTaxable" => 1.0,
+                               "FeeRate" => 0,
+                           "RevenueBase" => "40.000000",
+                              "TaxOnTax" => "0.000000"
+                    },
+                    {
+                           "TaxTypeCode" => "109",
+                           "TaxTypeDesc" => "CA TELECOM RELAY SYSTEMS SURCHARGE",
+                             "TaxAmount" => "0.200000",
+                               "Revenue" => "40.0",
+                            "CountyName" => "LOS ANGELES",
+                              "CityName" => "LOS ANGELES",
+                               "TaxRate" => 0.005,
+                        "PercentTaxable" => 1.0,
+                               "FeeRate" => 0,
+                           "RevenueBase" => "40.000000",
+                              "TaxOnTax" => "0.000000"
+                    },
+                    {
+                           "TaxTypeCode" => "316",
+                           "TaxTypeDesc" => "LOCAL UTILITY USERS TAX",
+                             "TaxAmount" => "4.011372",
+                               "Revenue" => "40.0",
+                            "CountyName" => "LOS ANGELES",
+                              "CityName" => "LOS ANGELES",
+                               "TaxRate" => 0.09,
+                        "PercentTaxable" => 1.0,
+                               "FeeRate" => 0,
+                           "RevenueBase" => "44.570800",
+                              "TaxOnTax" => "0.411372"
+                    },
+                    {
+                           "TaxTypeCode" => "118",
+                           "TaxTypeDesc" => "CA TELECONNECT FUND",
+                             "TaxAmount" => "0.432000",
+                               "Revenue" => "40.0",
+                            "CountyName" => "LOS ANGELES",
+                              "CityName" => "LOS ANGELES",
+                               "TaxRate" => 0.0108,
+                        "PercentTaxable" => 1.0,
+                               "FeeRate" => 0,
+                           "RevenueBase" => "40.000000",
+                              "TaxOnTax" => "0.000000"
+                    },
+                    {
+                           "TaxTypeCode" => "119",
+                           "TaxTypeDesc" => "CA HIGH COST FUND(A) SURCHARGE",
+                             "TaxAmount" => "0.140000",
+                               "Revenue" => "40.0",
+                            "CountyName" => "LOS ANGELES",
+                              "CityName" => "LOS ANGELES",
+                               "TaxRate" => 0.0035,
+                        "PercentTaxable" => 1.0,
+                               "FeeRate" => 0,
+                           "RevenueBase" => "40.000000",
+                              "TaxOnTax" => "0.000000"
+                    },
+                    {
+                           "TaxTypeCode" => "122",
+                           "TaxTypeDesc" => "CA UNIVERSAL LIFELINE  SURCHARGE",
+                             "TaxAmount" => "1.900000",
+                               "Revenue" => "40.0",
+                            "CountyName" => "LOS ANGELES",
+                              "CityName" => "LOS ANGELES",
+                               "TaxRate" => 0.0475,
+                        "PercentTaxable" => 1.0,
+                               "FeeRate" => 0,
+                           "RevenueBase" => "40.000000",
+                              "TaxOnTax" => "0.000000"
+                    },
+                    {
+                           "TaxTypeCode" => "035",
+                           "TaxTypeDesc" => "FEDERAL UNIVERSAL SERVICE FUND",
+                             "TaxAmount" => "0.983200",
+                               "Revenue" => "40.0",
+                            "CountyName" => "LOS ANGELES",
+                              "CityName" => "LOS ANGELES",
+                               "TaxRate" => 0.02458,
+                        "PercentTaxable" => 1,
+                               "FeeRate" => 0,
+                           "RevenueBase" => "40.000000",
+                              "TaxOnTax" => "0.000000"
+                    },
+                    {
+                           "TaxTypeCode" => "060",
+                           "TaxTypeDesc" => "FEDERAL COST RECOVERY CHARGE",
+                             "TaxAmount" => "0.915600",
+                               "Revenue" => "40.0",
+                            "CountyName" => "LOS ANGELES",
+                              "CityName" => "LOS ANGELES",
+                               "TaxRate" => 0.02289,
+                        "PercentTaxable" => 1.0,
+                               "FeeRate" => 0,
+                           "RevenueBase" => "40.000000",
+                              "TaxOnTax" => "0.000000"
+                    }]
+            }]
+    }
+  end
+
   def post_failed_response_body
     {
       "Successful"=>"N",
@@ -307,17 +494,17 @@ module RequestSpecHelper
   def suretax_valid_request_params
     {
       business_unit: "testing",
-       client_number: suretax_client_number,
-       client_tracking: "track",
-       data_month: "7",
-       data_year: "2013",
-       industry_exemption: "",
-       response_group: "03",
-       response_type: "D6",
-       return_file_code: "0",
-       total_revenue: "40",
-       validation_key: suretax_key,
-       items: [suretax_valid_request_item_params]
+      client_number: suretax_client_number,
+      client_tracking: "track",
+      data_month: "7",
+      data_year: "2013",
+      industry_exemption: "",
+      response_group: "03",
+      response_type: "D6",
+      return_file_code: "0",
+      total_revenue: "40",
+      validation_key: suretax_key,
+      items: [suretax_valid_request_item_params]
     }
   end
 

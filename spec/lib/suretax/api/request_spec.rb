@@ -8,17 +8,17 @@ describe Suretax::Api::Request do
   describe "accessors" do
     {
       business_unit: "testing",
-       client_number: suretax_client_number,
-       client_tracking: "track",
-       data_month: "7",
-       data_year: "2013",
-       industry_exemption: "",
-       response_group: "03",
-       response_type: "D6",
-       stan: "11111",
-       return_file_code: "0",
-       total_revenue: "40",
-       validation_key: suretax_key
+      client_number: suretax_client_number,
+      client_tracking: "track",
+      data_month: "7",
+      data_year: "2013",
+      industry_exemption: "",
+      response_group: "03",
+      response_type: "D6",
+      stan: "11111",
+      return_file_code: "0",
+      total_revenue: "40",
+      validation_key: suretax_key
     }.each_pair do |key, value|
 
       it "##{key} should return the correct value" do
@@ -38,7 +38,6 @@ describe Suretax::Api::Request do
       client_number = "1122334455"
 
       req = Suretax::Api::Request.new(client_number: client_number)
-
       expect(req.client_number).to eql(client_number)
     end
   end
