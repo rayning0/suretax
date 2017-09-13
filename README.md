@@ -12,9 +12,10 @@ SURETAX_CANCEL_VERSION=01
 ```ruby
 require_relative './lib/get_tax'
 
-Tax.new(zipcode: '95129').get_tax
-Tax.new(zipcode: '95129', revenue: '15.15').get_tax
-Tax.new(zipcode: '95129', revenue: '15.15', trans_type_code: 'FIXEDVOIP').get_tax
+Tax.new(zipcode: '94088').get_tax
+Tax.new(zipcode: '94088', revenue: '15.15').get_tax
+Tax.new(zipcode: '94088', revenue: '15.15',
+        trans_date: '09/12/2017', trans_type_code: 'FIXEDVOIP').get_tax
 ```
 
 Must have at least 1 parameter. Must have 1-13 parameters, like:
@@ -47,7 +48,7 @@ For parameters you don't input, we use these defaults:
   return_file_code: '0'
 ```
 
-See [software tests](https://github.com/xbpio/suretax-xbp/blob/master/spec/get_tax_spec.rb). See [sample API requests/responses](https://github.com/xbpio/suretax-xbp/spec/support/request_helper.rb).
+See [software tests](https://github.com/xbpio/suretax-xbp/blob/master/spec/get_tax_spec.rb). See [sample API requests/responses](https://github.com/xbpio/suretax-xbp/blob/master/spec/support/request_helper.rb).
 
 See [SureTax API call document](https://confluence.qualityspeaks.com/display/DEVPROCEDURES/SureTax+API+Call), plus
 
