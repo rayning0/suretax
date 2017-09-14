@@ -63,7 +63,7 @@ module Suretax
 
     def log_response
       puts "\nSureTax Response Received:"
-      ap body
+      pp body
     end
 
     def logger

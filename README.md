@@ -1,14 +1,18 @@
 # Get tax info from SureTax API
 
-This gem is for XBP only. It's NOT the public "[suretax](https://github.com/Hello-Labs/suretax)" gem!
+This gem is for XBP only. It's NOT the public "[suretax](https://github.com/Hello-Labs/suretax)" gem.
 
-In your directory, have secret `.env` file like:
+In Docker, Suretax's ENV variables are set in ap/config/initializers/suretax.rb.
+
+If not in Docker, set environment vars with [direnv](https://direnv.net/) (`brew install direnv`):
+
+In your directory, have secret `.envrc` file like:
 ```
-SURETAX_VALIDATION_KEY=____
-SURETAX_CLIENT_NUMBER=000000866
-SURETAX_BASE_URL=https://testapi.taxrating.net
-SURETAX_REQUEST_VERSION=04
-SURETAX_CANCEL_VERSION=01
+export SURETAX_VALIDATION_KEY=____
+export SURETAX_CLIENT_NUMBER=000000866
+export SURETAX_BASE_URL=https://testapi.taxrating.net
+export SURETAX_REQUEST_VERSION=04
+export SURETAX_CANCEL_VERSION=01
 ```
 ## To Use:
 

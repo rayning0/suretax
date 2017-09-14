@@ -1,9 +1,8 @@
-require "dotenv/load"
 require "rspec"
 require "rspec/its"
-require "awesome_print"
 require "webmock/rspec"
 require 'logger'
+require 'pp'
 
 # Load support files
 Dir[File.expand_path(File.dirname(__FILE__) + "/support/**/*.rb")].each do |support_file|

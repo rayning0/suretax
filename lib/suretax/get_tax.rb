@@ -4,14 +4,13 @@ require 'suretax'
 require "excon"
 require "money"
 require "monetize"
-require "awesome_print"
 
 class Tax
   attr_accessor :args
 
   def initialize(args)
     puts "\n\nSureTax input: #{args}"
-    # In Docker, Suretax.configure is set in ap/config/initializers/suretax.rb
+    # In Docker, Suretax's ENV variables are set in ap/config/initializers/suretax.rb
 
     @args = default_args.merge(args)
   end
