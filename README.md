@@ -9,7 +9,7 @@ If not in Docker, set environment vars with [direnv](https://direnv.net/) (`brew
 In your directory, have secret `.envrc` file like:
 ```
 export SURETAX_VALIDATION_KEY=____
-export SURETAX_CLIENT_NUMBER=000000866
+export SURETAX_CLIENT_NUMBER=____
 export SURETAX_BASE_URL=https://testapi.taxrating.net
 export SURETAX_REQUEST_VERSION=04
 export SURETAX_CANCEL_VERSION=01
@@ -18,7 +18,7 @@ export SURETAX_CANCEL_VERSION=01
 
 In Gemfile, put
 ```ruby
-gem 'suretax', git: 'https://github.com/xbpio/suretax.git'
+gem 'suretax', git: 'https://github.com/rayning0/suretax.git'
 ```
 In your code, put
 ```ruby
@@ -35,7 +35,7 @@ Must have at least 1 parameter. May have 1-13 parameters, like:
 ```ruby
 Tax.new(trans_type_code: 'HWCREDIT', tax_situs_rule: '03', sales_type_code: 'B',...).get_tax
 ```
-For parameters you leave out, we use these defaults from [default_args](https://github.com/xbpio/suretax/blob/master/lib/suretax/get_tax.rb):
+For parameters you leave out, we use these defaults from [default_args](https://github.com/rayning0/suretax/blob/master/lib/suretax/get_tax.rb):
 
 ```ruby
   zipcode: '91324',
@@ -60,8 +60,6 @@ For parameters you leave out, we use these defaults from [default_args](https://
   return_file_code: '0'
 ```
 
-See [software tests](https://github.com/xbpio/suretax/blob/master/spec/get_tax_spec.rb). See [sample API requests/responses](https://github.com/xbpio/suretax/blob/master/spec/support/request_helper.rb).
+See [software tests](https://github.com/rayning0/suretax/blob/master/spec/get_tax_spec.rb). See [sample API requests/responses](https://github.com/rayning0/suretax/blob/master/spec/support/request_helper.rb).
 
-See [SureTax API call document](https://confluence.qualityspeaks.com/display/DEVPROCEDURES/SureTax+API+Call), plus
-
-See p. 5-7 in [CCH SureTax Web Request API PDF](https://confluence.qualityspeaks.com/display/DEVPROCEDURES/SureTax+API+Call?preview=/16551209/16551210/CCH%20SureTax%20-%20Web%20Request%20API_v2.2.2%20(2)%20(1).pdf) for details on the 13 possible input parameters.
+See p. 5-7 in [CCH SureTax Web Request API PDF](https://github.com/rayning0/suretax/blob/master/CCH%20SureTax%20-%20Web%20Request%20API_v2.2.2.pdf) for details on the 13 possible input parameters.
